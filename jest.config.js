@@ -5,7 +5,7 @@ module.exports = {
     '<rootDir>/src/**/*.ts',
     '!<rootDir>/src/main/**',
     '!<rootDir>/src/**/*-protocols.ts',
-    '!<rootDir>/protocols/**',
+    '!**/protocols/**',
     '!**/test/**'
   ],
   // The directory where Jest should output its coverage files
@@ -17,5 +17,8 @@ module.exports = {
   // A map from regular expressions to paths to transformers
   transform: {
     '.+\\.ts$': 'ts-jest'
+  },
+  moduleNameMapper: {
+    '@/(.*)': '<rootDir>/src/$1'
   }
 }
